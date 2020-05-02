@@ -30,13 +30,14 @@ class ItemsController < ApplicationController
       if @item.price
         set_price
       end
-      if @item.save
+      if @item.save 
         flash[:notice] = '出品しました'
         redirect_to root_path
       else
         flash[:alert] = '登録できませんでした'
         redirect_to new_item_path
       end
+   
   end
 
      # 親カテゴリーが選択された後に動くアクション
